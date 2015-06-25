@@ -115,7 +115,7 @@ class Calculator {
    * @param $frame An array which contains the frame data.
    * @return bool Returns true or false.
    */
-  private function isStrike($frame) {
+  public function isStrike($frame) {
     if ($frame[0] == 'X')
       return true;
 
@@ -127,7 +127,7 @@ class Calculator {
    * @param $frame An array which contains the frame data.
    * @return bool Returns true or false.
    */
-  private function isSpare($frame) {
+  public function isSpare($frame) {
     if ($frame[1] == '/')
       return true;
 
