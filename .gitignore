@@ -1,1 +1,5 @@
 index.php
+.sass-cache
+node_modules
+*.css
+*.map
