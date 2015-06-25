@@ -1,7 +1,7 @@
 <?php
 namespace Jayza\BowlingLeague\Tests;
 
-use Jayza\BowlingLeague\Calculator;
+use Jayza\BowlingLeague\Backend\Calculator;
 
 class CalculatorTest extends \PHPUnit_Framework_TestCase {
   public function testIfFrameIsStrike() {

@@ -1,5 +1,5 @@
 <?php
-namespace Jayza\BowlingLeague;
+namespace Jayza\BowlingLeague\Backend;
 
 class Calculator {
   protected $scoreboard;
