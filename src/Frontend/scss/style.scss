@@ -1,3 +1,61 @@
 html, body {
   
 }
+
+$scorecard-border-color: #000;
+$scorecard-height: 70px;
+
+.scorecard {
+  //border: 1px solid $scorecard-border-color;
+  height: $scorecard-height;
+  width: auto;
+
+  .frame {
+    border-bottom: 1px solid $scorecard-border-color;
+    border-left: 1px solid $scorecard-border-color;
+    border-top: 1px solid $scorecard-border-color;
+    box-sizing: border-box;
+    display: inline-block;
+    height: $scorecard-height;
+    min-width: 75px;
+    float: left;
+    padding-left: 5px;
+    position: relative;
+
+    &:nth-child(10) {
+      border-right: 1px solid $scorecard-border-color;
+    }
+    
+    .top-container {
+      border-bottom: 1px solid $scorecard-border-color;
+      border-left: 1px solid $scorecard-border-color;
+      float: right;
+
+      .throw {
+        display: inline-block;
+        float: left;
+        position: relative;
+        padding: 5px;
+        text-align: center;
+        width: 20px;
+
+        &:nth-child(1) {
+          border-right: 1px solid $scorecard-border-color;
+        }
+
+        &:nth-child(3) {
+          border-left: 1px solid $scorecard-border-color;
+        }
+      }
+    }
+
+    .bottom-container {
+      font-size: 1.2rem;
+      bottom: 0;
+      float: right;
+      padding: 5px 10px;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
