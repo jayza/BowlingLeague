@@ -7,6 +7,7 @@ class Calculator {
   /**
    * Iteration function for frames that are going to be calculated.
    * @param $frames An array containing the current state of frames.
+   * @return string Frames are returned as JSON. 
    */
   public function iterateFrames(&$frames) {
     $this->scoreboard = $frames;
@@ -16,6 +17,8 @@ class Calculator {
     }
 
     $frames = $this->scoreboard;
+
+    return json_encode($frames);
   }
 
   /**
