@@ -4,29 +4,28 @@ namespace Jayza\BowlingLeague\Tests;
 use Jayza\BowlingLeague\Backend\Calculator;
 
 class CalculatorTest extends \PHPUnit_Framework_TestCase {
-  public function testIfFrameIsStrike() {
-    $bowl = new Calculator();
 
+  public function setUp() {
+    $this->calc = new Calculator();
+  }
+
+  public function testIfFrameIsStrike() {
     $frame_strike = array('X');
     $frame_spare = array('3', '/');
 
-    $this->assertTrue($bowl->isStrike($frame_strike));
-    $this->assertFalse($bowl->isStrike($frame_spare));
+    $this->assertTrue($this->calc->isStrike($frame_strike));
+    $this->assertFalse($this->calc->isStrike($frame_spare));
   }
 
   public function testIfFrameIsSpare() {
-    $bowl = new Calculator();
-
     $frame_strike = array('X');
     $frame_spare = array('3', '/');
 
-    $this->assertTrue($bowl->isSpare($frame_spare));
-    $this->assertFalse($bowl->isSpare($frame_strike));
+    $this->assertTrue($this->calc->isSpare($frame_spare));
+    $this->assertFalse($this->calc->isSpare($frame_strike));
   }
 
   public function testIfCalculationIsCorrect() {
-    $bowl = new Calculator();
-
     $frames_perfect = array(
       array('X'),
       array('X'),
@@ -67,15 +66,15 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase {
     );
 
     // Should be 300.
-    $bowl->iterateFrames($frames_perfect);
+    $this->calc->iterateFrames($frames_perfect);
     $this->assertEquals(300, $frames_perfect[9]['score']);
 
     // Should be 159.
-    $bowl->iterateFrames($frames_mixed);
+    $this->calc->iterateFrames($frames_mixed);
     $this->assertEquals(159, $frames_mixed[9]['score']);
 
     // Should be 150.
-    $bowl->iterateFrames($frames_spare);
+    $this->calc->iterateFrames($frames_spare);
     $this->assertEquals(150, $frames_spare[9]['score']);
   }
 }

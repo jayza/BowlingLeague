@@ -1,0 +1,14 @@
+{
+    "name": "jayza/bowlingleague",
+    "description": "A project to set up a bowling league that you and your friends can use!",
+    "authors": [
+        {
+            "name": "Jake Stanich",
+            "email": "jake@kirkandstanley.se"
+        }
+    ],
+    "require": {},
+    "autoload-dev": {
+      "psr-4": { "Jayza\\BowlingLeague\\": "src/"}
+    }
+}
